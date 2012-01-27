@@ -4,12 +4,16 @@
     <meta charset="utf-8">
     <title>Grow! | jquery.fluentgallery.js </title>
     <style>
-      code{
-        padding:10px;
-        margin:10px;
-        display:block;
-        border:1px solid #00ff00;
-      }
+    #target{
+    	background:#efefef;
+    }
+    
+	code{
+		padding:10px;
+		margin:10px;
+		display:block;
+		border:1px solid #00ff00;
+	}
     </style>
     <link href="./css/base.css" rel="stylesheet" type="text/css" media="all">
     <link href="./js/jquery.fluentgallery.css" rel="stylesheet" type="text/css" media="all">
@@ -17,12 +21,7 @@
   <body>
     <h1>jquery.fluentgallery.js</h1>
     <p>
-      このプラグインはtextareaで、enterを押すことでフォームを送信することができる様にするjquery.pluginです。
-      facebookのウォールのような投稿方法を提供します。
-      <br/>
-      <br/>
-      This plug-in textarea, is jquery.plugin to allow you to send the form by pressing enter.
-       Provides a way similar to the wall post facebook.
+      指定された要素にタイル上に要素を配置します。
     </p>
 
     <code>
@@ -31,16 +30,24 @@
       });
     </code>
     
-    <form action="./index.html" id="target" method="get">
-      <input name="test_hidden" type="hidden" value="test" />
-      <div>
-        <h2>sample form</h2>
-        <textarea name="test_textarea"></textarea>
-        ※上記のアドレスバーで送信を確認してください。<br />
-        *Please check the address bar above transmission
-        
-      </div>
-    </form>
+    <div id="target" class="fluentgallery">
+    	<div class="tile"><p style="background:#ffaaff;background:#ffaaff;height:100px;">test</p></div>
+    	<div class="tile"><p style="background:#00aaff;height:100px;">test</p></div>
+    	<div class="tile"><p style="background:#ccaaff;height:200px;">test</p></div>
+    	<div class="tile"><p style="background:#ddaaff;height:100px;">test</p></div>
+    	<div class="tile"><p style="background:#ff00ff;height:100px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa11;height:100px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa22;height:300px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa44;height:130px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa66;height:100px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa77;height:300px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa88;height:100px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa99;height:100px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa00;height:300px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa00;height:130px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa11;height:100px;">test</p></div>
+    	<div class="tile"><p style="background:#ffaa22;height:140px;">test</p></div>
+    </div>
     
     <footer>
       <div id="footer">

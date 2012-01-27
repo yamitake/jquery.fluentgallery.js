@@ -1,5 +1,14 @@
 @charset "utf-8";
 
-.test{
-	text-align:center;
+.fluentgallery{
+	position:relative;
+}
+
+.fluentgallery .tile{
+	background-color: #FFFFFF;
+    box-shadow: 0 1px 1px rgba(134, 250, 125, 0.4);
+    padding: 16px 16px 0;
+    position: absolute;
+    width: 192px;
+    border:1px solid #aaff00;
 }
