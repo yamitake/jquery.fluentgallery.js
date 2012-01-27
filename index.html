@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grow! | jquery.fluentgallery.js </title>
+    <style>
+      code{
+        padding:10px;
+        margin:10px;
+        display:block;
+        border:1px solid #00ff00;
+      }
+      
+      .sample{
+        padding:10px;
+        margin:10px;
+        display:block;
+        border:1px solid #00ffcc;
+      }
+      
+      .button_area{
+        padding:10px;
+        margin:10px;
+        display:block;
+        width:100px;
+        height:100px;
+        text-align:center;
+        vertical-align:middle;
+        border:1px solid #ccffcc;
+      }.
+      
+    </style>
+  </head>
+  <body>
+    <h1>jquery.fluentgallery.js</h1>
+    <p>
+      このプラグインはtextareaで、enterを押すことでフォームを送信することができる様にするjquery.pluginです。
+      facebookのウォールのような投稿方法を提供します。
+      <br/>
+      <br/>
+      This plug-in textarea, is jquery.plugin to allow you to send the form by pressing enter.
+       Provides a way similar to the wall post facebook.
+    </p>
+
+    <code>
+      $(function() {
+        $('#target').fluentgallery();
+      });
+    </code>
+    
+    <form action="./index.html" id="target" method="get">
+      <input name="test_hidden" type="hidden" value="test" />
+      <div>
+        <h2>sample form</h2>
+        <textarea name="test_textarea"></textarea>
+        ※上記のアドレスバーで送信を確認してください。<br />
+        *Please check the address bar above transmission
+        
+      </div>
+    </form>
+    
+    <footer>
+      <div id="footer">
+        Copyright (C) Grow! All Rights Reserved.
+      </div>
+    </footer>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.fluentgallery.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $('#target').fluentgallery();
+      });
+    </script>
+  </body>
+</html>
