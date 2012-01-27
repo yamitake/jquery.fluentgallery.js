@@ -36,6 +36,7 @@ THE SOFTWARE.
     var opts = $.extend(defaults , options);
     
     return this.each(function(){
+    	alert("")
     });
   };
 })(jQuery);
