@@ -26,17 +26,25 @@ THE SOFTWARE.
  */
 (function($) {
   var before_column = -1;
-	
+  var cols_height_arrays = {};
+  var tile_column_widths = {};
+  
   $.fn.fluentgallery = function(options){
     /**
      * default Options
      */
     var defaults ={
       tile_class : ".tile" ,
-      resize     : false
+      resize     : false ,
+      add : null
     };
     
     var opts = $.extend(defaults , options);
+    
+    if(opts.add != null){
+    	append(this , opts.add);
+    	return this;
+    }
     
     return this.each(function(){
     	var area_elem = $(this);
@@ -67,8 +75,6 @@ THE SOFTWARE.
 				tile_column_width = $(elem).outerWidth(true);
 				total_column = Math.floor(area_elem.outerWidth(true) / tile_column_width);
 				
-				console.log(before_column);
-				
 				//if no change column count . It don't need resize
 				if(before_column == total_column)return false;
 				
@@ -89,6 +95,24 @@ THE SOFTWARE.
 			elem.style.left = insert_position.left + 'px';
 			//console.log(cols_height_array);
 		});
+		
+		//keep position info.
+		cols_height_arrays[area_elem] = cols_height_array;
+		tile_column_widths[area_elem] = tile_column_width;
+	}
+	
+	/**
+	 * append
+	 */
+	function append(target , div){
+		var target_elem = $(target);
+		var tile = $(div).hide();
+		target_elem.append(tile);
+		
+		var position = getNextPosition(cols_height_arrays[target_elem] , tile , tile_column_widths[target_elem]);
+		tile.css('top' , position.top + 'px')
+			.css('left' , position.left + 'px')
+			.show('first');
 	}
 	
 	/**
