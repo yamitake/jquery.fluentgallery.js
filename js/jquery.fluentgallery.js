@@ -113,6 +113,8 @@ THE SOFTWARE.
 		tile.css('top' , position.top + 'px')
 			.css('left' , position.left + 'px')
 			.show('first');
+			
+		target.height(Math.max.apply(null, cols_height_arrays[target_elem]));
 	}
 	
 	/**

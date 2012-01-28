@@ -7,8 +7,9 @@
 .fluentgallery .tile{
 	background-color: #FFFFFF;
     box-shadow: 0 1px 1px rgba(134, 250, 125, 0.4);
-    padding: 16px 16px 0;
+    padding: 10px;
     position: absolute;
     width: 192px;
-    border:1px solid #aaff00;
+    border:1px solid #efefef;
+    margin:5px;
 }
