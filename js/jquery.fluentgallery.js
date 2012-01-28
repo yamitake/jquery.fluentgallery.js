@@ -35,7 +35,7 @@ THE SOFTWARE.
      */
     var defaults ={
       tile_class : ".tile" ,
-      resize     : false ,
+      resize     : true ,
       add : null
     };
     
