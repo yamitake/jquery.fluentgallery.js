@@ -25,6 +25,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  */
 (function($) {
+  var before_column = -1;
+	
   $.fn.fluentgallery = function(options){
     /**
      * default Options
@@ -43,7 +45,7 @@ THE SOFTWARE.
     	deployTiles(area_elem , opts.tile_class);
     	
     	if(opts.resize){
-	    	area_elem.bind("resize" , function(){
+	    	$(window).bind("resize" , function(){
 	    		deployTiles(area_elem , opts.tile_class);
 	    	});
 	   }
@@ -65,6 +67,13 @@ THE SOFTWARE.
 				tile_column_width = $(elem).outerWidth(true);
 				total_column = Math.floor(area_elem.outerWidth(true) / tile_column_width);
 				
+				console.log(before_column);
+				
+				//if no change column count . It don't need resize
+				if(before_column == total_column)return false;
+				
+				before_column = total_column;
+				
 				//init array 
 				for(var i = 0; i < total_column; i++)cols_height_array.push(0);
 				
@@ -78,7 +87,7 @@ THE SOFTWARE.
 			
 			elem.style.top  = insert_position.top + 'px';
 			elem.style.left = insert_position.left + 'px';
-			console.log(cols_height_array);
+			//console.log(cols_height_array);
 		});
 	}
 	
@@ -88,7 +97,7 @@ THE SOFTWARE.
 	function getNextPosition(cols_height_array , tile_elem , tile_column_width){
 		var length = cols_height_array.length;
 		var min = Math.min.apply(null, cols_height_array);  // → 1
-		console.log(min);
+
 		for(var i = 0; i <= length; i++){
 			if(min == cols_height_array[i]){
 				var insert_height = cols_height_array[i];
