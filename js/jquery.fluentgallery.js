@@ -45,7 +45,7 @@ THE SOFTWARE.
     	var area_elem = $(this);
     	var total_width = area_elem.outerWidth(true);
     	
-    	if(opts.add != null && !cols_height_arrays[$(area_elem)]){
+    	if(opts.add != null && cols_height_arrays[$(area_elem)]){
     		append($(area_elem) , opts.add);
     		return false;
     	}
