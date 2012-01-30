@@ -45,8 +45,8 @@ THE SOFTWARE.
     	var area_elem = $(this);
     	var total_width = area_elem.outerWidth(true);
     	
-    	if(opts.add != null){
-    		append(area_elem , opts.add);
+    	if(opts.add != null && !cols_height_arrays[$(area_elem)]){
+    		append($(area_elem) , opts.add);
     		return false;
     	}
     	
@@ -104,8 +104,7 @@ THE SOFTWARE.
 	/**
 	 * append
 	 */
-	function append(target , div){
-		var target_elem = $(target);
+	function append(target_elem , div){
 		var tile = $(div).hide();
 		target_elem.append(tile);
 		
