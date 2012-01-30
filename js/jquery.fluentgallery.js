@@ -41,14 +41,14 @@ THE SOFTWARE.
     
     var opts = $.extend(defaults , options);
     
-    if(opts.add != null){
-    	append(this , opts.add);
-    	return this;
-    }
-    
     return this.each(function(){
     	var area_elem = $(this);
     	var total_width = area_elem.outerWidth(true);
+    	
+    	if(opts.add != null){
+    		append(area_elem , opts.add);
+    		return false;
+    	}
     	
     	deployTiles(area_elem , opts.tile_class);
     	
@@ -85,6 +85,10 @@ THE SOFTWARE.
 				
 				elem.style.top = '0px';
 				elem.style.left = '0px';
+				
+				//keep position info.
+				cols_height_arrays[area_elem] = cols_height_array;
+				tile_column_widths[area_elem] = tile_column_width;
 			}
 			
 			var insert_position = getNextPosition(cols_height_array , elem , tile_column_width);
@@ -95,10 +99,6 @@ THE SOFTWARE.
 			elem.style.left = insert_position.left + 'px';
 			//console.log(cols_height_array);
 		});
-		
-		//keep position info.
-		cols_height_arrays[area_elem] = cols_height_array;
-		tile_column_widths[area_elem] = tile_column_width;
 	}
 	
 	/**
