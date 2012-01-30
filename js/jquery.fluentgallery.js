@@ -113,7 +113,7 @@ THE SOFTWARE.
 			.css('left' , position.left + 'px')
 			.show('first');
 			
-		target.height(Math.max.apply(null, cols_height_arrays[target_elem]));
+		target_elem.height(Math.max.apply(null, cols_height_arrays[target_elem]));
 	}
 	
 	/**
