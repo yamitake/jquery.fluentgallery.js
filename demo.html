@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<meta name="description" content="yamitake's github repository." />
+	<meta name="keywords" content="Grow!,jquery,javascript,css3,japan,jj" />
+	<meta name="robots" content="index,follow" />
+	<link rel="home" href="http://yamitake.github.com" title="yamitake github pages" />
+	<link rel="index" href="http://yamitake.github.com" />
+	<link rel="copyright" href="http://yamitake.github.com" />
+	<link rel="author" href="http://yamitake.github.com" title="yamitake" />
+
+    <title>jquery.fluentgallery.js </title>
+    <style>
+    #target{
+    	background:#000;
+    }
+    
+	.add-action{
+		padding:16px;
+		text-align:right;
+	}
+    </style>
+    
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+    <link href="./js/jquery.fluentgallery.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+  	<div class="container-fluid">
+  		<div class="page-header">
+	    	<h1>jquery.fluentgallery.js</h1>
+	    	<a href="#howto">How to Use</a>
+	    <div class="row">
+			<h3>Overview</h3>
+			<p></p>
+	    </div>
+	    <p>
+	      指定された要素にタイル上に要素を配置します。
+	    </p>
+	
+	    <div id="target" class="fluentgallery">
+	    	<div class="tile"><p style="background:#ffaaff;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aaff;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ccaaff;height:200px;">test</p></div>
+	    	<div class="tile"><p style="background:#ddaaff;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#0000ff;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa11;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aa22;height:300px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa44;height:130px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aa66;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa77;height:300px;">test</p></div>
+	    	<div class="tile"><p style="background:#22aa88;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aa99;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa00;height:300px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa00;height:130px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aa11;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa22;height:140px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aaff;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ccaaff;height:200px;">test</p></div>
+	    	<div class="tile"><p style="background:#ddaaff;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#0000ff;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa11;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aa22;height:300px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa44;height:130px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aa66;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa77;height:300px;">test</p></div>
+	    	<div class="tile"><p style="background:#22aa88;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aa99;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa00;height:300px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa00;height:130px;">test</p></div>
+	    	<div class="tile"><p style="background:#00aa11;height:100px;">test</p></div>
+	    	<div class="tile"><p style="background:#ffaa22;height:140px;">test</p></div>
+	    </div>
+	    
+	    <div class="add-action">
+	    	要素を追加する。
+	    	<span id="addbtn" class="btn">$('#target').fluentgallery({add:"&gt;div class='tile'&lt;&lt;p style='height:100px'&gt;&lt;/p&gt;&lt;/div&gt;"})</span>
+	    </div>
+	    <div class="row">
+	    	<h3><a href="#howto" id="howto" name="howto">How to Use</a></h3>
+	    	<p>
+	    		
+	    		<script src="https://gist.github.com/1695262.js?file=jquery.fluentgallery.readme"></script>
+	    	</p>
+	    </div>
+	    	<div class="span-one-third">
+	    		<h3>Custom</h3>
+	    		<p></p>
+	    	</div>
+	    <div>
+	    	<h5>Please follow me.</h5>
+	    	<ul>
+				<li>
+			    	<a href="http://growbutton.com/yamitake">http://growbutton.com/yamitake</a>
+				</li>
+				<li>	    		
+		    		<a href="https://twitter.com/#!/yamitake">@yamitake</a>
+	    		</li>
+	    	</ul>
+	    </div>
+	</div>
+    <footer>
+      <div id="footer">
+        Copyright (C) Yamitake All Rights Reserved.
+      </div>
+    </footer>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.fluentgallery.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $('#target').fluentgallery();
+      });
+    </script>
+    
+    <script>
+    $(function(){
+    	var count = 0;
+    	$("#addbtn").click(function(){
+    		$('#target').fluentgallery({add:"<div class='tile'><p style='height:100px'>" + (++count) + "</p></div>"});
+    	})
+    });
+    </script>
+  </body>
+</html>
