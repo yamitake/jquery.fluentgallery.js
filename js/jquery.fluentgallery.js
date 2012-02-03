@@ -36,7 +36,8 @@ THE SOFTWARE.
     var defaults ={
       tile_class : ".tile" ,
       resize     : true ,
-      add : null
+      add : null ,
+      margin_bottom : 0
     };
     
     var opts = $.extend(defaults , options);
@@ -126,7 +127,7 @@ THE SOFTWARE.
 		for(var i = 0; i <= length; i++){
 			if(min == cols_height_array[i]){
 				var insert_height = cols_height_array[i];
-				cols_height_array[i] += $(tile_elem).outerHeight();
+				cols_height_array[i] += $(tile_elem).outerHeight(true);
 				return {left:tile_column_width*i , top:insert_height};
 			}
 		}
