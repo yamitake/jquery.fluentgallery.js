@@ -46,6 +46,14 @@ THE SOFTWARE.
     	var area_elem = $(this);
     	var total_width = area_elem.outerWidth(true);
     	
+    	if($(this).find(opts.tile_class).length == 0){
+        $(area_elem).append('<div class="' + opts.tile_class.replace("." , "")  + '">/div>');
+        deployTiles(area_elem , opts.tile_class);
+        $(area_elem).html('');
+        
+        cols_height_arrays[area_elem][0] = 0;
+      }
+    	
     	if(opts.add != null && cols_height_arrays[$(area_elem)]){
     		append($(area_elem) , opts.add);
     		return false;
