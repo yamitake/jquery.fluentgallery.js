@@ -108,17 +108,13 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script type="text/javascript" src="./js/jquery.fluentgallery.js"></script>
     <script type="text/javascript">
-      $(function(){
-        $('#target').fluentgallery();
-      });
-    </script>
-    
-    <script>
-    $(function(){
-    	var count = 0;
-    	$("#addbtn").click(function(){
-    		$('#target').fluentgallery({add:"<div class='tile'><p style='height:100px'>" + (++count) + "</p></div>"});
-    	})
+      $(function(){ 
+              var fluentgallery = $.fluentgallery('#target');
+
+              var count = 0;
+              $("#addbtn").click(function(){
+                  fluentgallery.append( "<div class='tile'><p style='height:100px'>" + (++count) + "</p></div>"  )
+              })
     });
     </script>
   </body>
