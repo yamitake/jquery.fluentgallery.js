@@ -25,6 +25,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  */
 (function($) {
+
+  $.fluentgallery = function(selector, options)
+  { 
+    var container = $(selector);
+    container.fluentgallery();
+    return $.extend( container, {
+      append: function(element)
+      {
+        container.fluentgallery({add:element});
+      }
+    });
+  };
+
   var before_column = -1;
   var cols_height_arrays = {};
   var tile_column_widths = {};
