@@ -138,14 +138,28 @@ THE SOFTWARE.
    */
   function append(target_elem , div){
     var tile = $(div).hide();
-    target_elem.append(tile);
     
-    var position = getNextPosition(cols_height_arrays[target_elem] , tile , tile_column_widths[target_elem]);
-    tile.css('top' , position.top + 'px')
-      .css('left' , position.left + 'px')
-      .show('first');
+    $(div).find("img.content_img").each(function(){
+      $(this).bind("load" , function(){
+          deploy(tile);  
+      });
+        
+      $(this).bind("error" , function(){
+        $(this).remove();
+        deploy(this);
+      });
       
-    target_elem.height(Math.max.apply(null, cols_height_arrays[target_elem]));
+      function deploy(tile){
+        target_elem.append(tile);
+      
+        var position = getNextPosition(cols_height_arrays[target_elem] , tile , tile_column_widths[target_elem]);
+        tile.css('top' , position.top + 'px')
+          .css('left' , position.left + 'px')
+          .show();
+          
+        target_elem.height(Math.max.apply(null, cols_height_arrays[target_elem]));
+      }
+    });
   }
   
   /**
