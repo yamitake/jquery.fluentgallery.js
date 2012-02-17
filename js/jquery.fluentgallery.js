@@ -51,7 +51,8 @@ THE SOFTWARE.
       resize     : true ,
       add : null ,
       margin_bottom : 0 ,
-      reset : true
+      reset : true ,
+      order : true ,
     };
     
     var opts = $.extend(defaults , options);
@@ -72,6 +73,11 @@ THE SOFTWARE.
       }
       
       if(opts.add != null && cols_height_arrays[$(area_elem)]){
+        if(load_flag){
+          stack_div.push(opts.add);
+          return false;
+        }
+        
         append($(area_elem) , opts.add);
         return false;
       }
@@ -91,6 +97,8 @@ THE SOFTWARE.
     cols_height_arrays = {};
     tile_column_widths = {};
   }
+  
+  
   
   /**
    * Deploy tiles
@@ -133,20 +141,33 @@ THE SOFTWARE.
     });
   }
   
+  var stack_div = new Array();
+  var load_flag = false;
+  function next_append(target_elem){
+    if(stack_div.length.length == 0)return;
+    
+    append(target_elem , stack_div.shift());
+  }
+  
   /**
    * append
    */
   function append(target_elem , div){
+    load_flag = true;
     var tile = $(div).hide();
     
     $(div).find("img.content_img").each(function(){
       $(this).bind("load" , function(){
-          deploy(tile);  
+        deploy(tile);
+        next_append(target_elem);
+        load_flag = false;
       });
         
       $(this).bind("error" , function(){
         $(this).remove();
-        deploy(this);
+        deploy(tile);
+        next_append(target_elem);
+        load_flag = false;
       });
       
       function deploy(tile){
